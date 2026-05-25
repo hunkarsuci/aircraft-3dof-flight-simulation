@@ -32,7 +32,7 @@ python run_scenario_c.py
 python run_scenario_d.py
 ```
 
-## 🧪 Testing Suite (`pytest`)
+## Testing Suite (`pytest`)
 
 Execute unit tests to confirm mathematical models (Standard Atmosphere equations, aerodynamic lift and zero-lift transonic rise, thrust lapse parameters, dynamic ODE trajectories):
 ```PowerShell
