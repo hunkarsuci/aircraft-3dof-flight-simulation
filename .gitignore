@@ -1,13 +1,15 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+*.pyo
+*.pyd
 *$py.class
 
 # C extensions
 *.so
 
 # Distribution / packaging
-bin/
+.Python
 build/
 develop-eggs/
 dist/
@@ -21,36 +23,79 @@ sdist/
 var/
 wheels/
 share/
-python-wheels/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
-# Pytest / coverage
-.cache
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Test / coverage reports
+.cache/
 .pytest_cache/
+.tox/
+.nox/
 .coverage
+.coverage.*
 htmlcov/
+coverage.xml
+*.cover
+*.py.cover
+.hypothesis/
+cover/
 
-# Plots and graphics
-**/plots/
-*.png
-*.pdf
+# Type checkers / linters
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
 
-# Jupyter Notebooks
+# Jupyter / IPython
 .ipynb_checkpoints/
+profile_default/
+ipython_config.py
 
-# Environments
+# Virtual environments
 .env
-.venv
+.envrc
+.venv/
 env/
 venv/
 ENV/
 env.bak/
 venv.bak/
+__pypackages__/
+.pdm-python
+.pdm-build/
+.pixi/
 
-# IDE files
+# IDE / editor files
 .vscode/
 .idea/
 *.swp
 *.swo
+.spyderproject
+.spyproject
+.ropeproject
+tempCodeRunnerFile.py
+
+# Documentation / local app state
+docs/_build/
+/site
+.streamlit/secrets.toml
+
+# Generated simulation outputs
+plots/
+
+# OS files
+.DS_Store
+Thumbs.db
