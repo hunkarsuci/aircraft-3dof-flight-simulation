@@ -1,8 +1,8 @@
-# CLAUDE.md - Developer Guide for 3DOF Flight Dynamics Suite
+# Developer Guide for 3DOF Flight Dynamics Suite
 
 This document records development instructions, coding patterns, environment setups, and mathematical practices for maintaining the 3DOF point-mass jet aircraft flight dynamics simulation codebase.
 
-## 🛠️ Build and Environment Management
+## Build and Environment Management
 
 To set up the environment and run the package in editable mode:
 ```powershell
@@ -15,7 +15,7 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-## 🚀 Execution and Simulation Scenarios
+## Execution and Simulation Scenarios
 
 All scenario runs are placed under the root directory. Run them to execute mathematical integrations, print performance results, and generate graphics inside the `plots/` directory:
 ```powershell
@@ -43,7 +43,7 @@ pytest
 pytest -v
 ```
 
-## 🧭 Mathematical Coding Rules
+## Mathematical Coding Rules
 
 1. **Unit Consistency**: All physical quantities **MUST** use the metric system (SI) in internal code:
    * Coordinates, Altitude ($x, y, h$): Meters ($m$)
