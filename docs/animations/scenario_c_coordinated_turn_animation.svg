@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="260" viewBox="0 0 920 260" role="img" aria-labelledby="title desc">
+  <title id="title">Animated F-16 coordinated turn trajectory</title>
+  <desc id="desc">A red aircraft marker follows a banked heading reversal path.</desc>
+  <rect width="920" height="260" fill="#f8fafc"/>
+  <path id="path-c" d="M202 184 C202 74 392 72 392 184 C392 246 286 246 286 184 C286 140 354 140 354 184" fill="none" stroke="#7c3aed" stroke-width="4" stroke-linecap="round" stroke-dasharray="16 10"/>
+  <circle cx="202" cy="184" r="5" fill="#64748b"/>
+  <circle cx="354" cy="184" r="5" fill="#64748b"/>
+  <g>
+    <path d="M14 0 L-13 -8 L-8 0 L-13 8 Z" fill="#ef4444" stroke="#991b1b" stroke-width="1.5"/>
+    <animateMotion dur="4.5s" repeatCount="indefinite" rotate="auto">
+      <mpath href="#path-c"/>
+    </animateMotion>
+    <animateTransform attributeName="transform" type="rotate" values="-18;22;-18" dur="1.2s" repeatCount="indefinite" additive="sum"/>
+  </g>
+  <text x="40" y="44" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#0f172a">Scenario C: coordinated turn</text>
+  <text x="40" y="70" font-family="Arial,sans-serif" font-size="14" fill="#475569">Bank command creates turn rate, load factor, and speed bleed</text>
+  <text x="520" y="144" font-family="Arial,sans-serif" font-size="14" fill="#475569">bank limit and g-load are the key constraints</text>
+</svg>

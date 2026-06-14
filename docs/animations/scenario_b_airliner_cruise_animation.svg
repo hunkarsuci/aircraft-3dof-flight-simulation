@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="260" viewBox="0 0 920 260" role="img" aria-labelledby="title desc">
+  <title id="title">Animated Boeing 737 cruise trajectory</title>
+  <desc id="desc">A red aircraft marker flies a level cruise path while a fuel bar decreases.</desc>
+  <rect width="920" height="260" fill="#f8fafc"/>
+  <path id="path-b" d="M60 148 H860" fill="none" stroke="#2563eb" stroke-width="4" stroke-linecap="round" stroke-dasharray="18 12"/>
+  <line x1="60" y1="166" x2="860" y2="166" stroke="#94a3b8" stroke-width="2" stroke-dasharray="9 8"/>
+  <rect x="610" y="42" width="250" height="18" rx="4" fill="#fee2e2" stroke="#b91c1c"/>
+  <rect x="614" y="46" width="242" height="10" rx="3" fill="#ef4444">
+    <animate attributeName="width" values="242;92;242" dur="5s" repeatCount="indefinite"/>
+  </rect>
+  <text x="610" y="32" font-family="Arial,sans-serif" font-size="13" fill="#475569">fuel mass</text>
+  <g>
+    <path d="M14 0 L-13 -8 L-8 0 L-13 8 Z" fill="#ef4444" stroke="#991b1b" stroke-width="1.5"/>
+    <animateMotion dur="5s" repeatCount="indefinite" rotate="auto">
+      <mpath href="#path-b"/>
+    </animateMotion>
+  </g>
+  <text x="40" y="44" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#0f172a">Scenario B: cruise range</text>
+  <text x="40" y="70" font-family="Arial,sans-serif" font-size="14" fill="#475569">Hold altitude and speed while fuel burn accumulates range</text>
+</svg>

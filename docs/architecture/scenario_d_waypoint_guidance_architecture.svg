@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="420" viewBox="0 0 920 420" role="img" aria-labelledby="title desc">
+  <title id="title">Scenario D waypoint guidance system architecture</title>
+  <desc id="desc">Block diagram for the Learjet waypoint guidance and descent simulation workflow.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .bg{fill:#f8fafc}.box{fill:#fff;stroke:#334155;stroke-width:2;rx:8}.accent{fill:#e0f2fe;stroke:#0369a1}.wp{fill:#fce7f3;stroke:#be185d}.out{fill:#dcfce7;stroke:#15803d}.txt{font:600 16px Arial,sans-serif;fill:#0f172a}.sub{font:13px Arial,sans-serif;fill:#475569}.line{stroke:#334155;stroke-width:2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="920" height="420"/>
+  <text x="36" y="42" class="txt" font-size="22">Scenario D: Learjet Waypoint Guidance</text>
+  <text x="36" y="66" class="sub">Closed-loop 3D waypoint tracking and descending final approach</text>
+  <rect x="36" y="120" width="170" height="86" class="box accent"/>
+  <text x="58" y="151" class="txt">Mission Setup</text>
+  <text x="58" y="175" class="sub">Learjet at 3000 m</text>
+  <text x="58" y="194" class="sub">180 m/s speed hold</text>
+  <rect x="264" y="92" width="170" height="86" class="box wp"/>
+  <text x="286" y="123" class="txt">Waypoint List</text>
+  <text x="286" y="147" class="sub">4 position targets</text>
+  <text x="286" y="166" class="sub">Altitude schedule</text>
+  <rect x="248" y="226" width="210" height="74" class="box"/>
+  <text x="270" y="257" class="txt">Guidance</text>
+  <text x="270" y="281" class="sub">Heading + descent commands</text>
+  <rect x="492" y="120" width="170" height="86" class="box"/>
+  <text x="514" y="151" class="txt">3DOF Solver</text>
+  <text x="514" y="175" class="sub">Autopilot response</text>
+  <text x="514" y="194" class="sub">Waypoint transitions</text>
+  <rect x="720" y="120" width="164" height="86" class="box out"/>
+  <text x="742" y="151" class="txt">Outputs</text>
+  <text x="742" y="175" class="sub">3D path plot</text>
+  <text x="742" y="194" class="sub">Track + altitude charts</text>
+  <path class="line" d="M206 163 H246"/>
+  <path class="line" d="M349 178 V208"/>
+  <path class="line" d="M458 263 C474 263 466 177 474 177"/>
+  <path class="line" d="M662 163 H702"/>
+</svg>

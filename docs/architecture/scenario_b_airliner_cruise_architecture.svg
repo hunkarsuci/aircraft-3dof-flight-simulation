@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="420" viewBox="0 0 920 420" role="img" aria-labelledby="title desc">
+  <title id="title">Scenario B airliner cruise system architecture</title>
+  <desc id="desc">Block diagram for the Boeing 737 cruise and range verification simulation workflow.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .bg{fill:#f8fafc}.box{fill:#fff;stroke:#334155;stroke-width:2;rx:8}.accent{fill:#e0f2fe;stroke:#0369a1}.fuel{fill:#fee2e2;stroke:#b91c1c}.out{fill:#dcfce7;stroke:#15803d}.txt{font:600 16px Arial,sans-serif;fill:#0f172a}.sub{font:13px Arial,sans-serif;fill:#475569}.line{stroke:#334155;stroke-width:2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="920" height="420"/>
+  <text x="36" y="42" class="txt" font-size="22">Scenario B: Boeing 737 Cruise</text>
+  <text x="36" y="66" class="sub">Long-range cruise with Breguet-style range comparison</text>
+  <rect x="36" y="120" width="170" height="86" class="box accent"/>
+  <text x="58" y="151" class="txt">Cruise Setup</text>
+  <text x="58" y="175" class="sub">11,000 m, 230 m/s</text>
+  <text x="58" y="194" class="sub">10,000 kg fuel</text>
+  <rect x="264" y="80" width="170" height="74" class="box"/>
+  <text x="286" y="111" class="txt">Autopilot</text>
+  <text x="286" y="135" class="sub">Speed + altitude hold</text>
+  <rect x="264" y="206" width="170" height="74" class="box"/>
+  <text x="286" y="237" class="txt">3DOF Solver</text>
+  <text x="286" y="261" class="sub">Atmosphere + EOM</text>
+  <rect x="492" y="120" width="170" height="86" class="box fuel"/>
+  <text x="514" y="151" class="txt">Fuel Model</text>
+  <text x="514" y="175" class="sub">SFC, thrust lapse</text>
+  <text x="514" y="194" class="sub">Mass decay</text>
+  <rect x="492" y="252" width="170" height="74" class="box"/>
+  <text x="514" y="283" class="txt">Range Check</text>
+  <text x="514" y="307" class="sub">Simulated vs Breguet</text>
+  <rect x="720" y="120" width="164" height="86" class="box out"/>
+  <text x="742" y="151" class="txt">Outputs</text>
+  <text x="742" y="175" class="sub">Cruise plots</text>
+  <text x="742" y="194" class="sub">L/D and range report</text>
+  <path class="line" d="M206 163 H246"/>
+  <path class="line" d="M349 154 V188"/>
+  <path class="line" d="M434 243 C458 243 458 163 474 163"/>
+  <path class="line" d="M662 163 H702"/>
+  <path class="line" d="M577 206 V234"/>
+  <path class="line" d="M662 289 C696 289 698 209 720 190"/>
+</svg>

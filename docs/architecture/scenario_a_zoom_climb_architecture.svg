@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="420" viewBox="0 0 920 420" role="img" aria-labelledby="title desc">
+  <title id="title">Scenario A zoom climb system architecture</title>
+  <desc id="desc">Block diagram for the F-16 zoom climb simulation workflow.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .bg{fill:#f8fafc}.box{fill:#fff;stroke:#334155;stroke-width:2;rx:8}.accent{fill:#e0f2fe;stroke:#0369a1}.warn{fill:#fef3c7;stroke:#b45309}.out{fill:#dcfce7;stroke:#15803d}.txt{font:600 16px Arial,sans-serif;fill:#0f172a}.sub{font:13px Arial,sans-serif;fill:#475569}.line{stroke:#334155;stroke-width:2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="920" height="420"/>
+  <text x="36" y="42" class="txt" font-size="22">Scenario A: F-16 Zoom Climb</text>
+  <text x="36" y="66" class="sub">Two-phase speed dash and pull-up energy trade</text>
+  <rect x="36" y="112" width="170" height="86" class="box accent"/>
+  <text x="58" y="144" class="txt">Mission Setup</text>
+  <text x="58" y="168" class="sub">F-16, Mach 0.9</text>
+  <text x="58" y="187" class="sub">1000 m, northbound</text>
+  <rect x="264" y="92" width="170" height="74" class="box warn"/>
+  <text x="286" y="123" class="txt">Phase 1</text>
+  <text x="286" y="147" class="sub">Max thrust dash</text>
+  <rect x="264" y="210" width="170" height="74" class="box warn"/>
+  <text x="286" y="241" class="txt">Phase 2</text>
+  <text x="286" y="265" class="sub">Pull-up climb</text>
+  <rect x="492" y="112" width="170" height="86" class="box"/>
+  <text x="514" y="143" class="txt">3DOF Solver</text>
+  <text x="514" y="167" class="sub">Aerodynamics</text>
+  <text x="514" y="186" class="sub">Propulsion + EOM</text>
+  <rect x="492" y="250" width="170" height="74" class="box"/>
+  <text x="514" y="281" class="txt">Energy Audit</text>
+  <text x="514" y="305" class="sub">Kinetic, potential, total</text>
+  <rect x="720" y="112" width="164" height="86" class="box out"/>
+  <text x="742" y="143" class="txt">Outputs</text>
+  <text x="742" y="167" class="sub">Envelope plot</text>
+  <text x="742" y="186" class="sub">Load factor history</text>
+  <path class="line" d="M206 155 H246"/>
+  <path class="line" d="M434 129 H474"/>
+  <path class="line" d="M434 247 C456 247 456 155 474 155"/>
+  <path class="line" d="M662 155 H702"/>
+  <path class="line" d="M577 198 V232"/>
+  <path class="line" d="M662 287 C700 287 700 203 720 182"/>
+</svg>

@@ -13,7 +13,8 @@ The model is intended for flight-dynamics learning, controls experiments, and sc
 - Closed-loop speed, altitude, and heading guidance
 - Preset aircraft models: F-16, Boeing 737-800, and Learjet 35
 - Four scenario scripts that save PNG plots to `plots/`
-- Pytest coverage for atmosphere, aerodynamics, propulsion, and integration
+- 3D Matplotlib trajectory animations
+- Pytest coverage for atmosphere, aerodynamics, propulsion, integration, and animation helpers
 
 ## Coordinate Convention
 
@@ -80,10 +81,12 @@ Aircraft-3dof/
 |   |-- aircraft.py
 |   |-- atmosphere.py
 |   |-- controls.py
+|   |-- animation.py
 |   |-- dynamics.py
 |   |-- propulsion.py
 |   `-- simulation.py
 `-- tests/
+    |-- test_animation.py
     |-- test_aerodynamics.py
     |-- test_atmosphere.py
     |-- test_propulsion.py
@@ -131,7 +134,7 @@ python -m pytest -q
 Expected result:
 
 ```text
-6 passed
+9 passed
 ```
 
 ## Running Scenarios
@@ -153,6 +156,17 @@ Scenario outputs:
 | `run_scenario_b.py` | Boeing 737 cruise and Breguet range check | `plots/scenario_b_airliner_cruise.png` |
 | `run_scenario_c.py` | F-16 coordinated turn | `plots/scenario_c_coordinated_turn.png` |
 | `run_scenario_d.py` | Learjet waypoint tracking and descent | `plots/scenario_d_waypoint_guidance.png` |
+
+## Scenario Architecture And Animations
+
+Each simulation has a system architecture diagram and a lightweight trajectory animation. The SVG files are stored in `docs/architecture/` and `docs/animations/`.
+
+| Scenario | System architecture | Animation |
+| --- | --- | --- |
+| A: F-16 zoom climb | <img src="docs/architecture/scenario_a_zoom_climb_architecture.svg" alt="Scenario A zoom climb system architecture" width="360"> | <img src="docs/animations/scenario_a_zoom_climb_animation.svg" alt="Animated Scenario A zoom climb trajectory" width="360"> |
+| B: Boeing 737 cruise | <img src="docs/architecture/scenario_b_airliner_cruise_architecture.svg" alt="Scenario B airliner cruise system architecture" width="360"> | <img src="docs/animations/scenario_b_airliner_cruise_animation.svg" alt="Animated Scenario B cruise trajectory" width="360"> |
+| C: F-16 coordinated turn | <img src="docs/architecture/scenario_c_coordinated_turn_architecture.svg" alt="Scenario C coordinated turn system architecture" width="360"> | <img src="docs/animations/scenario_c_coordinated_turn_animation.svg" alt="Animated Scenario C coordinated turn trajectory" width="360"> |
+| D: Learjet waypoint mission | <img src="docs/architecture/scenario_d_waypoint_guidance_architecture.svg" alt="Scenario D waypoint guidance system architecture" width="360"> | <img src="docs/animations/scenario_d_waypoint_guidance_animation.svg" alt="Animated Scenario D waypoint guidance trajectory" width="360"> |
 
 On Windows, if `python` points to the wrong interpreter, run with the full path to the interpreter that has the dependencies installed:
 
@@ -228,12 +242,29 @@ fuel_flow = SFC(M) * T
 
 `aircraft_3dof.simulation.FlightSimulator` integrates the equations of motion with `scipy.integrate.solve_ivp` and returns a pandas `DataFrame` history.
 
+### Animation
+
+`aircraft_3dof.animation.animate_trajectory` creates a 3D Matplotlib `FuncAnimation` from a simulation history. It can return the animation object for notebooks or save it to disk for reports.
+
+```python
+from aircraft_3dof.animation import animate_trajectory
+
+anim = animate_trajectory(
+    df,
+    save_path="plots/trajectory.gif",
+    interval=50,
+    trail_length=80,
+    writer="pillow",
+)
+```
+
 ## Example: Programmatic Use
 
 ```python
 import numpy as np
 
 from aircraft_3dof.aircraft import get_aircraft_presets
+from aircraft_3dof.animation import animate_trajectory
 from aircraft_3dof.controls import Autopilot
 from aircraft_3dof.simulation import FlightSimulator
 
@@ -260,6 +291,7 @@ df = sim.run_simulation(
     step_size=0.2,
 )
 
+animate_trajectory(df, save_path="plots/learjet_trajectory.gif", writer="pillow")
 print(df.tail())
 ```
 

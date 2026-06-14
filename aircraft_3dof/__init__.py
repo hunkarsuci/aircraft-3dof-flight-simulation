@@ -11,6 +11,7 @@ from aircraft_3dof.aircraft import Aircraft, get_aircraft_presets
 from aircraft_3dof.dynamics import flight_dynamics_equations
 from aircraft_3dof.controls import Autopilot
 from aircraft_3dof.simulation import FlightSimulator
+from aircraft_3dof.animation import animate_trajectory
 
 __all__ = [
     'StandardAtmosphere',
@@ -20,5 +21,6 @@ __all__ = [
     'get_aircraft_presets',
     'flight_dynamics_equations',
     'Autopilot',
-    'FlightSimulator'
+    'FlightSimulator',
+    'animate_trajectory'
 ]
