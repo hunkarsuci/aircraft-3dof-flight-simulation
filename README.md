@@ -1,5 +1,14 @@
 # Aircraft 3DOF Flight Simulation
 
+[![CI](https://github.com/hunkarsuci/aircraft-3dof-flight-simulation/actions/workflows/ci.yml/badge.svg)](https://github.com/hunkarsuci/aircraft-3dof-flight-simulation/actions/workflows/ci.yml)
+![Python](https://img.shields.io/badge/python-%3E%3D3.8-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![NumPy](https://img.shields.io/badge/NumPy-required-4dabcf)
+![SciPy](https://img.shields.io/badge/SciPy-required-8caae6)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-required-11557c)
+![pandas](https://img.shields.io/badge/pandas-required-150458)
+![pytest](https://img.shields.io/badge/tests-pytest-0a9edc)
+
 Python simulation suite for educational 3-degree-of-freedom (3DOF) point-mass aircraft dynamics. The project includes atmosphere, aerodynamics, propulsion, closed-loop guidance, numerical integration, and four runnable mission scenarios that generate analysis plots.
 
 The model is intended for flight-dynamics learning, controls experiments, and scenario visualization. It is not a certified flight-performance tool.
@@ -14,7 +23,7 @@ The model is intended for flight-dynamics learning, controls experiments, and sc
 - Preset aircraft models: F-16, Boeing 737-800, and Learjet 35
 - Four scenario scripts that save PNG plots to `plots/`
 - 3D Matplotlib trajectory animations
-- Pytest coverage for atmosphere, aerodynamics, propulsion, integration, and animation helpers
+- Pytest coverage for atmosphere, aerodynamics, propulsion, controls, integration, and animation helpers
 
 ## Coordinate Convention
 
@@ -134,8 +143,18 @@ python -m pytest -q
 Expected result:
 
 ```text
-9 passed
+12 passed
 ```
+
+## Continuous Integration
+
+GitHub Actions runs the test suite automatically on every push and pull request to `main`. The CI matrix installs the package on multiple Python versions, uses the same dependency path documented above, sets Matplotlib to the non-interactive `Agg` backend, and runs:
+
+```bash
+pytest -q
+```
+
+The CI badge at the top of this README links directly to the workflow status.
 
 ## Running Scenarios
 

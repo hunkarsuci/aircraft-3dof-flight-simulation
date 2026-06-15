@@ -30,6 +30,10 @@ dev = [
     "pytest>=6.2.0",
 ]
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["aircraft_3dof*"]
